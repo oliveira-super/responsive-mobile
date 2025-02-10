@@ -1,7 +1,7 @@
 # responsive-mobile
 Verificação de responsividade em ambiente nativo
 
-Aqui é o ambiente onde eu faço testes em aplicações nativas (somente parte html/css e js por enquanto).
+Aqui é o ambiente onde eu faço testes em aplicações nativas (html/css e js).
 O projeto do repositório é volátil ou seja ele muda frequentimente para testar a responsividade de meus novos projetos. 
 
 
