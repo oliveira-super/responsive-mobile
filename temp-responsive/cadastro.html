@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap');
+
+        :root{
+            --color-g1: #ecfccb;
+            --color-g2: #a3e635;
+            --color-g3: #3f6212;
+            --color-g4: #1a2e05;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: radial-gradient(#474747, #282828);
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+            
+        }
+        #mask{
+            background: radial-gradient(#232323, #101010 30%);
+            background-position: center center;
+            height: 1100px;
+            width: 1920px;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            z-index: 1;
+            pointer-events: none;
+            animation: poweron .5s ease forwards .5s;
+        }
+        @keyframes poweron {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+                visibility: hidden;
+            }
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+            margin-top: 100px;
+            margin: 10% auto;
+            height: 300px;
+            width: 300px;
+            border: 4px dashed var(--color-g4);
+        }
+        #sign-up{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            gap: 4px;
+            position: relative;
+        }
+        h1{
+            color: var(--color-g1);
+            font-family: "Doto", serif;
+            font-weight: bolder;
+            position: absolute;
+            top: 10%;
+        }
+        p, input{
+            color: var(--color-g2);
+            font-family: "Pixelify Sans", serif;
+        }
+        #name, #password{
+            border-style: none;
+            outline: none;
+            cursor: pointer;
+            /* border-radius: 10px; */
+            background-color: var(--color-g4);
+            color: var(--color-g3);
+            padding: 4px;
+            transition: .2s;
+            letter-spacing: 2px;
+        }
+        #name:focus, #password:focus{
+            color: var(--color-g2);
+            background-color: var(--color-g3);
+        }
+        #btn-sign{
+            background-color: var(--color-g3);
+            color: var(--color-g1);
+            border-style: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 1px 1px 5px 5px;
+
+            position: absolute;
+            top: 76%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 10px 0px 0px var(--color-g4);
+            transition: .1s;
+        }
+        #btn-sign:hover{
+            top: 78%;
+            box-shadow: 0px 4px 0px 0px var(--color-g4);
+        }
+        #contaA{
+            position: absolute;
+            top: 93%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            text-decoration: none;
+            font-size: .6em;
+        }
+        #contaP{
+            transition: .4s;
+        }
+        #contaP:hover{
+            color: var(--color-g1);
+            text-shadow: 0px 0px 2px var(--color-g1);
+        }
+    </style>
+</head>
+<body>
+    <div id="mask"></div>
+    <div id="container">
+        <div id="sign-up">
+            <h1>Cadastrar-se</h1>
+            <p>Nome de usuário</p>
+            <input type="name" id="name" maxlength="16" required>
+            <p>insira uma senha</p>
+            <input type="password" id="password" maxlength="18" required>
+            
+            <a href="login.html">
+                <input type="button" value="Criar cadastro" id="btn-sign" onclick="criar()">
+            </a>
+            
+            <a id="contaA" href="login.html">
+                <p id="contaP">Já tenho uma conta</p>
+            </a>
+        </div>
+    </div>
+    <script src="script-login-sign/script-sign.js"></script>
+</body>
+</html>

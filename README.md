@@ -8,6 +8,6 @@ Executo os teste usando o GitHub Pages com meu celular para verificar se realmen
 
 [**oliveira-super.github.io**](https://oliveira-super.github.io/responsive-mobile/)
 
-<a href="temp-responsive/index.html" target="_blank">responsive-verification</a>
+<a href="temp-responsive/iframe.html" target="_blank">responsive-verification</a>
 
 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu jogo da velha</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container" id="screen">
+        <div class="box" id="screen">
+            <p>Jogo bloqueado, realize o login para jogar</p>
+            <br>
+            <p>Aperte o <u>botão vermelho</u></p>
+        </div>
+    </div>
+    <div id="bloco-jogo">
+        <h1>Sua vez</h1>
+        <h2 id="who" style="color: #ff7171;">Jogador 1 (X)</h2>
+        <table>
+            <tr>
+                <td id="b1"></td>
+                <td id="b2"></td>
+                <td id="b3"></td>
+            </tr>
+            <tr>
+                <td id="b4"></td>
+                <td id="b5"></td>
+                <td id="b6"></td>
+            </tr>
+            <tr>
+                <td id="b7"></td>
+                <td id="b8"></td>
+                <td id="b9"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="../script-login-sign/script-sign.js"></script>
+    
+    <script>
+         var verificar = parseInt(localStorage.getItem("verificar"))
+        //  window.alert(typeof(verificar)+verificar)
+
+         if(verificar >= 1){
+            var bloqueio = document.getElementById("screen")
+            bloqueio.innerHTML = ""
+            bloqueio.classList.add("invisivel")
+            bloqueio.classList.add("position-a")
+
+        }
+    </script>
+</body>
+</html>

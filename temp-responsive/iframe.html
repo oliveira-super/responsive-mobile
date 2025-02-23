@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap');
+
+        :root{
+            --color-g1: #ecfccb;
+            --color-g2: #a3e635;
+            --color-g3: #3f6212;
+            --color-g4: #1a2e05;
+            --color-r1: #4b0000;
+            --font-p1: "Doto", serif;
+            --font-p2: "Pixelify Sans", serif;
+}
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url("imgs/code.gif");
+            background-position: center center;
+            background-size: 1800px;
+            background-attachment: fixed;            
+        }
+        #opacity{
+            height: 100vh;
+            width: 100vw;
+            backdrop-filter: brightness(15%);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #pop-up{
+            font-family: var(--font-p1);
+            color: var(--color-g4);
+            text-shadow: 0px 0px 1px var(--color-g4);
+            background-color: var(--color-g1);
+            border-radius: 4px;
+            user-select: none;
+
+            position: absolute;
+            top: -30%; /*valor final*/
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            z-index: 1;
+            /* transition: top .6s ease; */
+            /* animation-fill-mode: forwards */
+        }
+        #pop-up p{
+            padding: 5px 30px;
+        }
+        #pop-up p:first-child{
+            font-family: var(--font-p2);
+        }
+        #pop-up2{
+            font-family: var(--font-p1);
+            color: var(--color-g4);
+            text-shadow: 0px 0px 1px var(--color-g4);
+            background-color: var(--color-g1);
+            border-radius: 4px;
+            user-select: none;
+
+            position: absolute;
+            top: -30%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            z-index: 1;
+        }
+        #pop-up2 p{
+            padding: 5px 30px;
+        }
+        #pop-up2 p:first-child{
+            font-family: var(--font-p2);
+        }
+        .animar{
+            animation: pop-upOpen 1s ease 0s forwards, pop-upClose 1s ease 5s forwards;
+        }
+        @keyframes pop-upOpen {
+            from{top: -30%;}
+            to{top: 20%;}
+        }
+        @keyframes pop-upClose{
+            from{top: 20%;}
+            to{top: -30%;}
+        }
+        #computer{
+            height: 600px;
+            width: 900px;
+            border-radius: 16px 16px 50px 50px;
+            background: linear-gradient(to bottom, #d1cc75, #776d3a);
+            padding-bottom: 30px;
+            margin-top: 1px;
+            box-shadow: inset 0px 0px 10px 10px rgba(0, 0, 0, 0.273);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        iframe{
+            width: 80%;
+            height: 80%;
+            border-radius: 10px;
+            
+        }
+        #sombra{
+            position: absolute;
+            width: 80%;
+            height: 76%;
+            border-radius: 10px;
+            box-shadow: inset 0px 0px 10px 10px black;
+            pointer-events: none;
+        }
+        #btn-1{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            bottom: 6%;
+            left: 20%;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: red;
+            transition: 3s;
+        }
+        .btn-1-1{
+            box-shadow: 0px 0px 20px 4px red;
+        }
+        #btn-2{
+            width: 30px;
+            height: 30px; 
+            position: absolute;
+            bottom: 6%;
+            left: 30%;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: var(--color-g4);
+            transition: 3s;
+        }
+        .btn-2-1{
+            box-shadow: 0px 0px 20px 4px greenyellow;
+        }
+        #btn-3{
+            color: aliceblue;
+            width: 30px;
+            height: 30px; 
+            position: absolute;
+            bottom: 6%;
+            left: 80%;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: rgb(34, 34, 34);
+        }
+    </style>
+</head>
+<body>
+    <div id="pop-up">
+        <p>
+            credenciais inválidas ou não criou cadastro
+        </p>
+        <p>
+            PRESSIONE O BOTÃO VERMELHO OU TENTE NOVAMENTE!
+        </p>
+    </div>
+    <div id="pop-up2">
+        <p>
+            login completo!
+        </p>
+        <p>
+            PRESSIONE O BOTÃO VERDE
+        </p>
+    </div>
+    <div id="opacity">
+        <div id="computer">
+            <div id="sombra"></div>
+           <iframe src="cadastro.html" frameborder="0" name="iframealvo"></iframe>
+
+           <a href="cadastro.html" target="iframealvo">
+            <button class="btn-1-1" id="btn-1"></button>
+           </a>
+           <a href="jogo/jogo-da-velha.html" target="iframealvo">
+            <button id="btn-2"></button>
+           </a>
+           <a href="poweroff.html" target="iframealvo">
+            <button id="btn-3" onclick="reset()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+                <path d="M7.5 1v7h1V1z"/>
+                <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812"/>
+              </svg></button>
+           </a>
+        </div>
+    </div>
+
+    <script>
+        var redCheck = true
+        window.onload = function() {
+        localStorage.clear()
+        }
+
+        var poweroff = true
+        var powertroca = window.document.querySelector('a[href="poweroff.html"]')
+        var power = window.document.getElementById('btn-3')
+        
+        power.addEventListener('click', trocaPower)
+
+        function trocaPower(){
+            poweroff = !poweroff
+            if(poweroff){
+                powertroca.href = "cadastro.html" 
+                
+            } else{
+                powertroca.href = "poweroff.html" 
+                
+            }
+        }
+
+        function reset(){
+            localStorage.clear()
+            var botao = window.document.getElementById("btn-2")
+             botao.classList.remove("btn-2-1")
+
+             var botaoRed = window.document.getElementById("btn-1")
+
+             redCheck = !redCheck
+             if(redCheck)
+             {
+                 botaoRed.classList.add("btn-1-1")
+                 botaoRed.style.backgroundColor = "red"
+                 botaoRed.style.pointerEvents = "all"
+
+                 botao.style.pointerEvents = "all"
+                }else{
+                    botaoRed.classList.remove("btn-1-1")
+                    botaoRed.style.backgroundColor = "var(--color-r1)"
+                    botaoRed.style.pointerEvents = "none"
+                    
+                    botao.style.backgroundColor = "var(--color-g4)"
+                    botao.style.pointerEvents = "none"
+                }
+        }   
+    </script>
+
+    <script src="script-login-sign/script-sign.js"></script>
+</body>
+</html>

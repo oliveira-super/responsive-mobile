@@ -1,0 +1,35 @@
+bloquear jogo com pointer-events: none e tirar com javascript apos login
+
+cadastro js - conta criada pressione o botao vermelho
+
+login js - ao apertar login entrar em jogo da velha
+
+(se tiver login com algm var true entra no jogo se n fica no login iframe
+)
+botao liga e desliga js - alternar entre poweroff e cadastro
+
+jogo da velho fazer
+
+
+colocar block sem usuario, na frente do jogo botao verde
+retirar apos login concluido
+
+#screen{
+    /*  
+    background-color: black;
+    position: relative;
+    
+    position: absolute;
+    top: 5%;
+    left: 50%; */
+   background-color: red;
+   height: 10vh;
+}
+#screen p{
+    background-color: black;
+}
+
+1 RESOLVER TELA #
+2 POP UPS ALERT #
+3 JOGO VELHA 
+4 DOCUMENTAR / DESCREVER OQ FIZ SUBIR GIT
